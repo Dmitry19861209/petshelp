@@ -1,16 +1,14 @@
 package app.actors
 
 import akka.actor.{Actor, ActorLogging, Props}
-import app.models.{LoginUser, NewUser, User}
+import app.models.{LoginUser, User}
 import app.repositories.UserRepository
-
-final case class Users(users: Seq[User])
 
 object UserRegistryActor {
   final case class ActionPerformed(description: String)
   final case object GetUsers
-  final case class CreateUser(user: NewUser)
-  final case class GetUser(loginUser: LoginUser)
+  final case class CreateUser(user: User)
+  final case class GetTokenByUser(loginUser: LoginUser)
   final case class DeleteUser(name: String)
 
   def props: Props = Props[UserRegistryActor]
@@ -25,7 +23,7 @@ class UserRegistryActor extends Actor with ActorLogging {
     case CreateUser(user) =>
       val result = UserRepository.createUserFromRegistration(user)
       sender() ! result
-    case GetUser(loginUser) =>
+    case GetTokenByUser(loginUser) =>
       val isAuth = UserRepository.checkPass(loginUser)
       sender() ! isAuth
     case DeleteUser(name) =>

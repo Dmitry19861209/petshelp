@@ -2,21 +2,28 @@ package app.models
 
 import app.traits.Models
 import resources.MongoDatabase
-import com.mongodb.casbah.commons.MongoDBObject
-import app.services.JSON.JsonSupport
+import com.mongodb.casbah.commons.{MongoDBObject, TypeImports}
+import com.mongodb.casbah.Imports._
 
-case class LoginUser(login: String, password: String)
-case class NewUser(login: String, password: String, role: String)
-case class User(login: String, password: String, role: String, sname: String = "",
-                phone: Map[String, String] = Map.empty, addresses: Array[Map[String, String]] = Array.empty)
+case class LoginUser(login: String, password: String, token: String)
+case class User(login: String,  password: String, token: String, role: String, sname: String,
+                phone: Map[String, String], addresses: Array[Map[String, String]]) {
+  def this(login: String, password: String, token: String, role: String) = this(login, password, token, role, "", Map.empty, Array.empty)
+}
 
-object Users extends Models with JsonSupport {
+object Users extends Models {
   val collection = MongoDatabase.getCollection("users")
 
-  def getUserByField(fieldName: String, field: String) =
+  def getUserByField(fieldName: String, field: String): Option[TypeImports.DBObject] =
     collection.findOne(MongoDBObject({fieldName} -> field))
 
   def createUser(userInfo: Vector[(String, Any)]) = {
     collection.insert(MongoDBObject(userInfo: _*))
+  }
+
+  def tokenUpdate(fieldName: String, user: LoginUser) = {
+    val builder = collection.initializeOrderedBulkOperation
+    builder.find(MongoDBObject("login" -> user.login)).updateOne($set("token" -> user.token))
+    val result = builder.execute()
   }
 }

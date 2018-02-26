@@ -1,7 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5f550ea-5589-4693-94a2-de0f7756457f" name="Default" comment="" />
+    <list default="true" id="b5f550ea-5589-4693-94a2-de0f7756457f" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/app/actors/UserPersonalAccountActor.scala" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Main.scala" afterPath="$PROJECT_DIR$/src/main/scala/Main.scala" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/app/actors/UserRegistryActor.scala" afterPath="$PROJECT_DIR$/src/main/scala/app/actors/UserRegistryActor.scala" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/app/models/User.scala" afterPath="$PROJECT_DIR$/src/main/scala/app/models/User.scala" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/app/repositories/UserRepository.scala" afterPath="$PROJECT_DIR$/src/main/scala/app/repositories/UserRepository.scala" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/app/services/JSON/JsonSupport.scala" afterPath="$PROJECT_DIR$/src/main/scala/app/services/JSON/JsonSupport.scala" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/app/traits/Models.scala" afterPath="$PROJECT_DIR$/src/main/scala/app/traits/Models.scala" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/routes/AuthExpandRoutes.scala" afterPath="$PROJECT_DIR$/src/main/scala/routes/AuthExpandRoutes.scala" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/routes/PersonalAccountExpandRoutes.scala" afterPath="$PROJECT_DIR$/src/main/scala/routes/PersonalAccountExpandRoutes.scala" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Main$.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Main$.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Main$delayedInit$body.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Main$delayedInit$body.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Main.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Main.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$$anonfun$receive$1.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$$anonfun$receive$1.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$ActionPerformed$.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$ActionPerformed$.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$ActionPerformed.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$ActionPerformed.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$CreateUser$.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$CreateUser$.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$CreateUser.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$CreateUser.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$DeleteUser$.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$DeleteUser$.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$DeleteUser.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$DeleteUser.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$GetUser$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$GetUser.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$GetUsers$.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor$GetUsers$.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/UserRegistryActor.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/Users$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/actors/Users.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/models/LoginUser$.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/models/LoginUser$.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/models/LoginUser.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/models/LoginUser.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/models/NewUser$.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/models/NewUser.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/models/User$.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/models/User$.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/models/User.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/models/User.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/models/Users$.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/models/Users$.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/models/Users.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/models/Users.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/repositories/UserNotAuth$.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/repositories/UserNotAuth$.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/repositories/UserNotAuth.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/repositories/UserNotAuth.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/repositories/UserRepository$.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/repositories/UserRepository$.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/repositories/UserRepository.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/repositories/UserRepository.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/services/JSON/JsonSupport.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/app/traits/Models.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/app/traits/Models.class" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/routes/AuthExpandRoutes.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/routes/PersonalAccountExpandRoutes.class" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/routes/PersonalAccountExpandRoutes.class" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -23,8 +67,8 @@
       <file leaf-file-name="Main.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Main.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="9" column="41" lean-forward="true" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+            <state relative-caret-position="224">
+              <caret line="16" column="117" lean-forward="false" selection-start-line="16" selection-start-column="117" selection-end-line="16" selection-end-column="117" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -32,24 +76,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainRoutes.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/routes/MainRoutes.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="18" column="44" lean-forward="false" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
-              <folding>
-                <element signature="e#16#45#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthExpandRoutes.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AuthExpandRoutes.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/routes/AuthExpandRoutes.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="45" column="22" lean-forward="true" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="308">
+              <caret line="55" column="59" lean-forward="false" selection-start-line="55" selection-start-column="59" selection-end-line="55" selection-end-column="59" />
+              <folding>
+                <element signature="e#16#57#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,8 +91,30 @@
       <file leaf-file-name="UserRegistryActor.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/app/actors/UserRegistryActor.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+            <state relative-caret-position="42">
+              <caret line="3" column="28" lean-forward="false" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonalAccountExpandRoutes.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/routes/PersonalAccountExpandRoutes.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="26" column="41" lean-forward="false" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+              <folding>
+                <element signature="e#16#57#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserPersonalAccountActor.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/app/actors/UserPersonalAccountActor.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
               <folding>
                 <element signature="e#20#66#0" expanded="true" />
               </folding>
@@ -66,11 +122,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserRepository.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserRepository.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/app/repositories/UserRepository.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="18" column="48" lean-forward="false" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="48" />
+            <state relative-caret-position="238">
+              <caret line="49" column="51" lean-forward="false" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
               <folding>
                 <element signature="e#26#53#0" expanded="true" />
               </folding>
@@ -81,8 +137,8 @@
       <file leaf-file-name="User.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/app/models/User.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="10" column="107" lean-forward="false" selection-start-line="10" selection-start-column="107" selection-end-line="10" selection-end-column="107" />
+            <state relative-caret-position="238">
+              <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
               <folding>
                 <element signature="e#20#44#0" expanded="true" />
               </folding>
@@ -93,8 +149,8 @@
       <file leaf-file-name="JsonSupport.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/app/services/JSON/JsonSupport.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="11" column="45" lean-forward="false" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+            <state relative-caret-position="224">
+              <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
               <folding>
                 <element signature="e#27#91#0" expanded="true" />
               </folding>
@@ -106,10 +162,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>StatusCodes</find>
-      <find>userRegistrations</find>
-      <find>Credentials</find>
-      <find>user</find>
       <find>createUser</find>
       <find>UserCreate</find>
       <find>ver</find>
@@ -135,7 +187,11 @@
       <find>UserRepository</find>
       <find>MethodDirectives</find>
       <find>val system: ActorSystem</find>
+      <find>userPersonalAccountActor</find>
+      <find>isAuth</find>
       <find>serrFormat</find>
+      <find>getUserByField</find>
+      <find>NewUser</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -153,7 +209,6 @@
         <option value="$PROJECT_DIR$/src/main/scala/resources/Database.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/app/traits/Database.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/app/models/GetStarted.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/routes/PersonalAccountExpandRoutes.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/resources/application.conf" />
         <option value="$PROJECT_DIR$/src/main/scala/resources/MongoDatabase.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/app/controllers/Auth/LoginController.scala" />
@@ -161,12 +216,17 @@
         <option value="$PROJECT_DIR$/src/main/scala/app/traits/RoutesConfig.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/resources/Helpers.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/routes/MainRoutes.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/app/actors/UserRegistryActor2.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/app/actors/userPersonalAccountActor.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Main.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/app/actors/UserRegistryActor.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/app/repositories/UserRepository.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/app/traits/Models.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/routes/PersonalAccountExpandRoutes.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/routes/AuthExpandRoutes.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/app/services/JSON/JsonSupport.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/app/actors/UserRegistryActor.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/app/models/User.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/app/services/JSON/JsonSupport.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/app/actors/UserPersonalAccountActor.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/app/repositories/UserRepository.scala" />
       </list>
     </option>
   </component>
@@ -176,7 +236,9 @@
     <option name="width" value="669" />
     <option name="height" value="750" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -192,7 +254,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -224,15 +289,46 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="petsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="petsTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="actors" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="petsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="petsTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="petsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="petsTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="petsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="petsTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -244,6 +340,9 @@
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="app.services.JSON" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/scala/app/actors" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -429,6 +528,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="28" y="18" width="1340" height="786" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -439,9 +539,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28549618" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22290076" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23664123" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3572519" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22376543" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -471,31 +571,13 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/scala/app/repositories/UserRepository.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" column="10" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-          <folding>
-            <element signature="e#26#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/app/models/User.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-          <folding>
-            <element signature="e#20#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/routes/AuthExpandRoutes.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#16#57#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -514,7 +596,7 @@
         <state relative-caret-position="210">
           <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
           <folding>
-            <element signature="e#16#45#0" expanded="true" />
+            <element signature="e#16#45#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -523,7 +605,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
           <caret line="39" column="12" lean-forward="true" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
-          <folding />
+          <folding>
+            <element signature="e#16#57#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -542,7 +626,7 @@
         <state relative-caret-position="322">
           <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
           <folding>
-            <element signature="e#16#45#0" expanded="true" />
+            <element signature="e#16#45#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -551,7 +635,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="e#16#57#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -570,7 +656,7 @@
         <state relative-caret-position="322">
           <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
           <folding>
-            <element signature="e#16#45#0" expanded="true" />
+            <element signature="e#16#45#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -579,7 +665,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
           <caret line="29" column="19" lean-forward="true" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-          <folding />
+          <folding>
+            <element signature="e#16#57#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -598,7 +686,7 @@
         <state relative-caret-position="322">
           <caret line="23" column="52" lean-forward="true" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
           <folding>
-            <element signature="e#16#45#0" expanded="true" />
+            <element signature="e#16#45#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -614,7 +702,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-          <folding />
+          <folding>
+            <element signature="e#16#57#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -640,7 +730,7 @@
         <state relative-caret-position="168">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="e#16#45#0" expanded="true" />
+            <element signature="e#16#45#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -660,13 +750,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/app/controllers/Controller.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/app/traits/Models.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="28">
           <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
@@ -795,78 +878,108 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/resources/Helpers.scala" />
-    <entry file="file://$PROJECT_DIR$/src/main/scala/routes/PersonalAccountExpandRoutes.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/app/actors/UserPersonalAccountActor.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="34" column="6" lean-forward="false" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Main.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="41" lean-forward="true" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/routes/MainRoutes.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="18" column="44" lean-forward="false" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
-          <folding>
-            <element signature="e#16#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/app/actors/UserRegistryActor.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+        <state relative-caret-position="84">
+          <caret line="6" column="31" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="31" />
           <folding>
             <element signature="e#20#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/app/repositories/UserRepository.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/app/traits/Models.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/routes/MainRoutes.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="18" column="48" lean-forward="false" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="48" />
+          <caret line="18" column="64" lean-forward="false" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
           <folding>
-            <element signature="e#26#53#0" expanded="true" />
+            <element signature="e#16#45#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/app/services/JSON/JsonSupport.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Main.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="11" column="45" lean-forward="false" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+        <state relative-caret-position="224">
+          <caret line="16" column="117" lean-forward="false" selection-start-line="16" selection-start-column="117" selection-end-line="16" selection-end-column="117" />
           <folding>
-            <element signature="e#27#91#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/app/models/User.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="107" lean-forward="false" selection-start-line="10" selection-start-column="107" selection-end-line="10" selection-end-column="107" />
-          <folding>
-            <element signature="e#20#44#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/routes/AuthExpandRoutes.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="45" column="22" lean-forward="true" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+        <state relative-caret-position="308">
+          <caret line="55" column="59" lean-forward="false" selection-start-line="55" selection-start-column="59" selection-end-line="55" selection-end-column="59" />
+          <folding>
+            <element signature="e#16#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/app/actors/UserRegistryActor.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="3" column="28" lean-forward="false" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/app/models/User.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+          <folding>
+            <element signature="e#20#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/routes/PersonalAccountExpandRoutes.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="26" column="41" lean-forward="false" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+          <folding>
+            <element signature="e#16#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/app/actors/UserPersonalAccountActor.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+          <folding>
+            <element signature="e#20#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/app/services/JSON/JsonSupport.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+          <folding>
+            <element signature="e#27#91#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/app/repositories/UserRepository.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="49" column="51" lean-forward="false" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
+          <folding>
+            <element signature="e#26#53#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

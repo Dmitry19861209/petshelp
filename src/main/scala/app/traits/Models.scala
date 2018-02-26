@@ -1,5 +1,7 @@
 package app.traits
 
-trait Models {
+import app.services.JSON.JsonSupport
+
+trait Models extends JsonSupport {
 
 }
