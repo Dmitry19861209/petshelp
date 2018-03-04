@@ -5,7 +5,7 @@ import app.models.{LoginUser, User}
 import app.repositories.UserRepository
 
 object UserPersonalAccountActor {
-  final case class GetUserByToken(login: String, token: String)//TODO Скорее всего lтакой case class будут использовать много кто.надо вынести
+  final case class GetUserByToken(login: String, token: String)//TODO Скорее всего такой case class будет использоваться много где.надо вынести
 
   def props: Props = Props[UserPersonalAccountActor]
 }

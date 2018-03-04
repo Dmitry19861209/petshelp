@@ -1,5 +1,5 @@
 import scala.concurrent.Await
-import scala.concurrent.duration.Duration
+import scala.concurrent.duration._
 import akka.actor.{ActorRef, ActorSystem}
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.server.Route
@@ -22,5 +22,5 @@ object Main extends App with MainRoutes {
 
   println(s"Server online at http://localhost:8081")
 //
-//  Await.result(system.whenTerminated, Duration.Inf)
+  Await.result(system.whenTerminated, Duration.Inf)
 }

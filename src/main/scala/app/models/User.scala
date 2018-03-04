@@ -5,10 +5,10 @@ import resources.MongoDatabase
 import com.mongodb.casbah.commons.{MongoDBObject, TypeImports}
 import com.mongodb.casbah.Imports._
 
-case class LoginUser(login: String, password: String, token: String)
-case class User(login: String,  password: String, token: String, role: String, sname: String,
+case class LoginUser(login: String, password: String, token: Array[Map[String, String]])
+case class User(login: String,  password: String, token: Array[Map[String, String]], role: String, sname: String,
                 phone: Map[String, String], addresses: Array[Map[String, String]]) {
-  def this(login: String, password: String, token: String, role: String) = this(login, password, token, role, "", Map.empty, Array.empty)
+//  def this(login: String, password: String, token: String, role: String) = this(login, password, token, role, "", Map.empty, Array.empty)
 }
 
 object Users extends Models {
@@ -21,9 +21,9 @@ object Users extends Models {
     collection.insert(MongoDBObject(userInfo: _*))
   }
 
-  def tokenUpdate(fieldName: String, user: LoginUser) = {
+  def tokenUpdate(fieldName: String, login: String, token: Array[Map[String, String]]) = {
     val builder = collection.initializeOrderedBulkOperation
-    builder.find(MongoDBObject("login" -> user.login)).updateOne($set("token" -> user.token))
+    builder.find(MongoDBObject("login" -> login)).updateOne($set("token" -> token))
     val result = builder.execute()
   }
 }

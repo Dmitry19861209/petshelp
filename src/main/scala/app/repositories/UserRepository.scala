@@ -1,40 +1,42 @@
 package app.repositories
 
 import app.traits.BaseRepos
-import app.models.Users.{createUser, getUserByField, serrFormat, serrFormatForUser, tokenUpdate}
-import app.models.{LoginUser, User}
+import app.models.Users._
+import app.models.User
 import com.github.t3hnar.bcrypt._
+import app.services.Hashing
 
-abstract class isRegister()
-abstract class isAuth()
-case class UserCreated() extends isRegister
-case class UserAlreadyExist() extends isRegister
-case class UserIsAuth() extends isAuth
-case class UserIsAuthWithPersonalData(user: String) extends isAuth
-case class UserNotAuth() extends isAuth
+case class UserCreated(token: Array[Map[String, String]])
+case class UserAlreadyExist()
+case class UserIsAuth(token: Array[Map[String, String]])
+case class UserIsAuthWithPersonalData(user: String)
+case class UserNotAuth()
 
-object UserRepository extends BaseRepos {
+object UserRepository extends BaseRepos with Hashing {
   /* Создать новго пользователя */
-  def createUserFromRegistration(user: User): () => isRegister = {
-    val userAuth = getUserByField("login", user.login)
+  def createNewUser(login: String, password: String, user: User) = {
+    val userAuth = getUserByField("login", login)
     userAuth match {
-      case Some(x) => UserAlreadyExist
+      case Some(u) => UserAlreadyExist
       case _ =>
-        val userKeys = user.getClass.getDeclaredFields.map(_.getName)
-        val userPair =  for ((elem, idx) <- userKeys.zipWithIndex) yield (elem, user.productElement(idx))
+        val tokenG = tokenGenerate(login)
+        val newUser = user.copy(login = login, password = password.bcrypt, token = tokenG)
+        val userKeys = newUser.getClass.getDeclaredFields.map(_.getName)
+        val userPair =  for ((elem, idx) <- userKeys.zipWithIndex) yield (elem, newUser.productElement(idx))
         createUser(userPair.toVector)
-        UserCreated
+        UserCreated(tokenG)
     }
   }
 
   /* Проверить наличие пользователя и сверить пароль */
-  def checkPass(loginUser: LoginUser): () => isAuth = {
-    getUserByField("login", loginUser.login) match {
+  def checkPass(login: String, password: String) = {
+    getUserByField("login", login) match {
       case Some(x) =>
-        val authCheck: Boolean = loginUser.password.isBcrypted(serrFormat(x.toString).password)
+        val authCheck: Boolean = password.isBcrypted(serrFormat(x.toString).password)
         if (authCheck) {
-          tokenUpdate("token", loginUser)
-          UserIsAuth
+          val tokenG = tokenGenerate(login)
+          tokenUpdate("token", login, tokenG)
+          UserIsAuth(tokenG)
         } else UserNotAuth
       case _ => UserNotAuth
     }
@@ -54,7 +56,7 @@ object UserRepository extends BaseRepos {
   }
 
   /* Сгенерировать токен */
-  def tokenGenerate: String = randomString(30)
+  def tokenGenerate(userLogin: String): Array[Map[String, String]] = Array(Map("id" -> md5(userLogin), "access_token" -> randomString(30)))
   def randomString(len: Int): String = {
     val rand = new scala.util.Random(System.nanoTime)
     val sb = new StringBuilder(len)

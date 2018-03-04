@@ -2,7 +2,6 @@ package routes
 
 import akka.actor.ActorSystem
 import akka.event.Logging
-
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
 import app.services.JSON.JsonSupport

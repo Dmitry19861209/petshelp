@@ -5,11 +5,8 @@ import app.models.{LoginUser, User}
 import app.repositories.UserRepository
 
 object UserRegistryActor {
-  final case class ActionPerformed(description: String)
-  final case object GetUsers
-  final case class CreateUser(user: User)
-  final case class GetTokenByUser(loginUser: LoginUser)
-  final case class DeleteUser(name: String)
+  final case class CreateNewUser(login: String, password: String, user: User)
+  final case class GetTokenByUser(login: String, password: String)
 
   def props: Props = Props[UserRegistryActor]
 }
@@ -20,14 +17,11 @@ class UserRegistryActor extends Actor with ActorLogging {
   var users = Set.empty[User]
 
   def receive: Receive = {
-    case CreateUser(user) =>
-      val result = UserRepository.createUserFromRegistration(user)
+    case CreateNewUser(login, password, user) =>
+      val result = UserRepository.createNewUser(login, password, user)
       sender() ! result
-    case GetTokenByUser(loginUser) =>
-      val isAuth = UserRepository.checkPass(loginUser)
+    case GetTokenByUser(login, password) =>
+      val isAuth = UserRepository.checkPass(login, password)
       sender() ! isAuth
-    case DeleteUser(name) =>
-//      users.find(_.name == name) foreach { user => users -= user }
-      sender() ! ActionPerformed(s"User $name deleted.")
   }
 }
