@@ -2,13 +2,13 @@ package app.repositories
 
 import app.traits.BaseRepos
 import app.models.Users._
-import app.models.User
+import app.models.{ParamsMap, User}
 import com.github.t3hnar.bcrypt._
 import app.services.Hashing
 
-case class UserCreated(token: Array[Map[String, String]])
+case class UserCreated(token: Map[String, String])
 case class UserAlreadyExist()
-case class UserIsAuth(token: Array[Map[String, String]])
+case class UserIsAuth(token: Map[String, String])
 case class UserIsAuthWithPersonalData(user: String)
 case class UserNotAuth()
 
@@ -19,8 +19,8 @@ object UserRepository extends BaseRepos with Hashing {
     userAuth match {
       case Some(u) => UserAlreadyExist
       case _ =>
-        val tokenG = tokenGenerate(login)
-        val newUser = user.copy(login = login, password = password.bcrypt, token = tokenG)
+        val tokenG = tokenGenerate(login, "")
+        val newUser = user.copy(login = login, password = password.bcrypt, token = Array(tokenG))
         val userKeys = newUser.getClass.getDeclaredFields.map(_.getName)
         val userPair =  for ((elem, idx) <- userKeys.zipWithIndex) yield (elem, newUser.productElement(idx))
         createUser(userPair.toVector)
@@ -28,15 +28,29 @@ object UserRepository extends BaseRepos with Hashing {
     }
   }
 
-  /* Проверить наличие пользователя и сверить пароль */
-  def checkPass(login: String, password: String) = {
+  /* Проверить наличие пользователя и сверить пароль и токен */
+  def checkPass(login: String, password: String, params: ParamsMap) = {
     getUserByField("login", login) match {
-      case Some(x) =>
-        val authCheck: Boolean = password.isBcrypted(serrFormat(x.toString).password)
+      case Some(u) =>
+        val userFromDb = serrFormat(u.toString)
+        val authCheck: Boolean = password.isBcrypted(userFromDb.password)
         if (authCheck) {
-          val tokenG = tokenGenerate(login)
-          tokenUpdate("token", login, tokenG)
-          UserIsAuth(tokenG)
+          val accessId = params.params.getOrElse("accessId", "")
+          val tokenFromDb = userFromDb.token.filter(x => x.getOrElse("accessId", "") == accessId)
+          if (tokenFromDb.length != 0) {
+            val newToken = tokenGenerate(login, accessId);val oldToken = userFromDb.token
+            val tokenG = oldToken.map { m =>
+              if (m("accessId") == accessId) m.updated("accessToken", newToken("accessToken"))
+              else m
+            }
+            tokenUpdate("token", login, tokenG)
+            UserIsAuth(newToken)
+          } else {
+            val newToken = tokenGenerate(login, accessId);val oldToken = userFromDb.token
+            val tokenG = newToken +: oldToken
+            tokenUpdate("token", login, tokenG)
+            UserIsAuth(newToken)
+          }
         } else UserNotAuth
       case _ => UserNotAuth
     }
@@ -56,7 +70,12 @@ object UserRepository extends BaseRepos with Hashing {
   }
 
   /* Сгенерировать токен */
-  def tokenGenerate(userLogin: String): Array[Map[String, String]] = Array(Map("id" -> md5(userLogin), "access_token" -> randomString(30)))
+  def tokenGenerate(userLogin: String, accessId: String): Map[String, String] = {
+    Map(
+      if(accessId != "") "accessId" -> accessId else "accessId" -> md5(userLogin),
+      "accessToken" -> randomString(30)
+    )
+  }
   def randomString(len: Int): String = {
     val rand = new scala.util.Random(System.nanoTime)
     val sb = new StringBuilder(len)

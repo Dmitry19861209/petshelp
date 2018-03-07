@@ -10,6 +10,7 @@ case class User(login: String,  password: String, token: Array[Map[String, Strin
                 phone: Map[String, String], addresses: Array[Map[String, String]]) {
 //  def this(login: String, password: String, token: String, role: String) = this(login, password, token, role, "", Map.empty, Array.empty)
 }
+case class ParamsMap(params: Map[String, String])
 
 object Users extends Models {
   val collection = MongoDatabase.getCollection("users")

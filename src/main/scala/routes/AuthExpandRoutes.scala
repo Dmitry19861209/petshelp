@@ -25,19 +25,21 @@ trait AuthExpandRoutes extends RoutesConfig {
         complete(200 -> "Server is OK.")
       } ~
       post {
-        extractCredentials {
-          case Some(BasicHttpCredentials(login, password)) =>
-            val getToken = userRegistryActor ? GetTokenByUser(login, password)
-            onSuccess(getToken) {
-              case UserIsAuth(token) =>
-                val t = token(0)
-                val access_token = t("access_token")
-                val id = t("id")
-                complete(200 -> s""" { "token" : "$access_token", "id" : $id } """)
-              case UserNotAuth => complete(401 -> "user not auth")
-              case _ => complete(401 -> "")
-            }
-          case _ => complete(HttpResponse(status = 401))
+        entity(as[ParamsMap]) { params =>
+          extractCredentials {
+            case Some(BasicHttpCredentials(login, password)) =>
+              val getToken = userRegistryActor ? GetTokenByUser(login, password, params)
+              onSuccess(getToken) {
+                case UserIsAuth(token) =>
+                  val t = token
+                  val accessToken = t("accessToken")
+                  val accessId = t("accessId")
+                  complete(200 -> s""" { "accessToken" : "$accessToken", "accessId" : "$accessId" } """)
+                case UserNotAuth => complete(401 -> "user not auth")
+                case _ => complete(401 -> "")
+              }
+            case _ => complete(HttpResponse(status = 401))
+          }
         }
       }
     }
@@ -51,10 +53,10 @@ trait AuthExpandRoutes extends RoutesConfig {
               val userCreated = userRegistryActor ? CreateNewUser(login, password, user)
               onSuccess(userCreated) {
                 case UserCreated(token) =>
-                  val t = token(0)
-                  val access_token = t("access_token")
-                  val id = t("id")
-                  complete(200 -> s""" { "token" : "$access_token", "id" : $id } """)
+                  val t = token
+                  val accessToken = t("accessToken")
+                  val accessId = t("accessId")
+                  complete(200 -> s""" { "accessToken" : "$accessToken", "accessId" : "$accessId" } """)
                 case UserAlreadyExist => complete(409 -> "user already exists")
                 case _ => complete(401 -> "")
               }
