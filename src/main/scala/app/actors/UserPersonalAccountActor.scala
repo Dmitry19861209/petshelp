@@ -15,7 +15,7 @@ class UserPersonalAccountActor extends Actor with ActorLogging {
 
   def receive: Receive = {
     case GetUserByToken(login, token) =>
-      val user = UserRepository.getPersonalData(login, token)
-      sender() ! user
+//      val user = UserRepository.getPersonalData(login)
+      sender() ! ""
   }
 }

@@ -7,10 +7,13 @@ import akka.http.scaladsl.server.Directives.{path, post, _}
 import akka.http.scaladsl.server.Route
 import akka.http.scaladsl.server.directives.RouteDirectives.complete
 import akka.pattern.ask
-import app.actors.UserRegistryActor.{CreateNewUser, GetTokenByUser}
+import app.actors.UserRegistryActor.CreateNewUser
 import app.models._
-import app.repositories._
+import app.repositories.UserRepository._
 import app.traits.RoutesConfig
+import scala.concurrent.Future
+import scala.util.{Failure, Success}
+import scala.concurrent.ExecutionContext.Implicits.global
 
 trait AuthExpandRoutes extends RoutesConfig {
 
@@ -28,15 +31,15 @@ trait AuthExpandRoutes extends RoutesConfig {
         entity(as[ParamsMap]) { params =>
           extractCredentials {
             case Some(BasicHttpCredentials(login, password)) =>
-              val getToken = userRegistryActor ? GetTokenByUser(login, password, params)
-              onSuccess(getToken) {
-                case UserIsAuth(token) =>
-                  val t = token
-                  val accessToken = t("accessToken")
-                  val accessId = t("accessId")
-                  complete(200 -> s""" { "accessToken" : "$accessToken", "accessId" : "$accessId" } """)
-                case UserNotAuth => complete(401 -> "user not auth")
-                case _ => complete(401 -> "")
+              val getToken = Future { checkPass(login, password, params) }
+              onComplete(getToken) {
+                case Success(x) => x match {
+                  case UserIsAuth(t) =>
+                    complete(200 -> s""" { "accessToken" : "${t("accessToken")}", "accessId" : "${t("accessId")}" } """)
+                  case UserNotAuth => complete(401 -> "user not auth")
+                  case _ => complete(401 -> "")
+                }
+                case Failure(x) => complete(401 -> "")
               }
             case _ => complete(HttpResponse(status = 401))
           }
