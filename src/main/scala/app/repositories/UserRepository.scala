@@ -5,26 +5,31 @@ import app.models.Users._
 import app.models.{ParamsMap, User}
 import com.github.t3hnar.bcrypt._
 import app.services.Hashing
+import app.services.JSON.ParserStruct
 
-object UserRepository extends BaseRepos with Hashing {
+object UserRepository extends BaseRepos
+  with Hashing
+  with ParserStruct {
   case class UserCreated(token: Map[String, String])
   case class UserAlreadyExist()
   case class UserIsAuth(token: Map[String, String])
   case class TokenIsValid()
   case class UserNotAuth()
 
-  /* Создать новго пользователя */
+  /* Создать нового пользователя */
   def createNewUser(login: String, password: String, user: User) = {
-    val userAuth = getUserByField("login", login)
-    userAuth match {
-      case Some(u) => UserAlreadyExist
-      case _ =>
-        val tokenG = tokenGenerate(login, "")
-        val newUser = user.copy(login = login, password = password.bcrypt, token = Array(tokenG))
-        val userKeys = newUser.getClass.getDeclaredFields.map(_.getName)
-        val userPair =  for ((elem, idx) <- userKeys.zipWithIndex) yield (elem, newUser.productElement(idx))
-        createUser(userPair.toVector)
-        UserCreated(tokenG)
+    if (login == "" || password == "") { false } else {
+      val userAuth = getUserByField("login", login)
+      userAuth match {
+        case Some(u) => UserAlreadyExist
+        case _ =>
+          val tokenG = tokenGenerate(login, "")
+          val newUser = user.copy(login = login, password = password.bcrypt, token = Array(tokenG))
+          val userKeys = newUser.getClass.getDeclaredFields.map(_.getName)
+          val userPair =  for ((elem, idx) <- userKeys.zipWithIndex) yield (elem, newUser.productElement(idx))
+          createUser(userPair.toVector)
+          UserCreated(tokenG)
+      }
     }
   }
 
@@ -70,12 +75,27 @@ object UserRepository extends BaseRepos with Hashing {
     }
   }
 
+  def checkLogout(login: String, accessId: String) = {
+    getUserByField("login", login) match {
+      case Some(u) =>
+        val uDb = serrFormatForUser(u.toString)
+        val check = uDb.token.filter(x => x.getOrElse("accessId", "") == accessId)
+        val newTokens = uDb.token.filter(x => x.getOrElse("accessId", "") != accessId)
+        if (check.length != 0) {
+          tokenUpdate("token", login, newTokens)
+          UserIsAuth(Map("status" -> "OK"))
+        } else UserNotAuth
+      case _ => UserNotAuth
+    }
+  }
+
   /* Получить информацию о пользователе */
   def getPersonalData(p: ParamsMap) = {
       getUserByField("login", p.params.getOrElse("login", "")) match {
       case Some(u) =>
         val uDb = serrFormatForUser(u.toString)
-        s""" { "role": "${uDb.role}", "sname": "${uDb.sname}", "phone": "${uDb.phone}", "addresses": "${uDb.addresses}" } """
+        formResponseData(uDb)
+//        s""" { "role" : "${uDb.role}", "fname" : "${uDb.fname}", "sname" : "${uDb.sname}", "phone": ${convertS(uDb.phone)}, "addresses": ${convertS(uDb.addresses)} } """
       case _ => UserNotAuth
     }
   }

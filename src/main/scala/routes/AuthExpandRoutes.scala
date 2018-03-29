@@ -47,6 +47,26 @@ trait AuthExpandRoutes extends RoutesConfig {
       }
     }
 
+  def logout: Route =
+    path("logout") {
+      post {
+        extractCredentials {
+          case Some(BasicHttpCredentials(login, accessId)) =>
+            val result = Future { checkLogout(login, accessId) }
+            onComplete(result) {
+              case Success(x) => x match {
+                case UserIsAuth(t) =>
+                  complete(200 -> s""" { "status" : "${t("status")}" } """)
+                case UserNotAuth => complete(401 -> "user not auth")
+                case _ => complete(401 -> "")
+              }
+              case Failure(x) => complete(401 -> "")
+            }
+          case _ => complete(HttpResponse(status = 401))
+        }
+      }
+    }
+
   def register: Route =
     path("register") {
       post {
@@ -69,5 +89,5 @@ trait AuthExpandRoutes extends RoutesConfig {
       }
     }
 
-  def authRoutes: Route = login ~ register
+  def authRoutes: Route = login ~ logout ~ register
 }

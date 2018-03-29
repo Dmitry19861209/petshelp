@@ -6,8 +6,8 @@ import com.mongodb.casbah.commons.{MongoDBObject, TypeImports}
 import com.mongodb.casbah.Imports._
 
 case class LoginUser(login: String, password: String, token: Array[Map[String, String]])
-case class User(login: String,  password: String, token: Array[Map[String, String]], role: String, sname: String,
-                phone: Map[String, String], addresses: Array[Map[String, String]]) {
+case class User(login: String,  password: String, token: Array[Map[String, String]], role: String, fname: String,
+                sname: String,phone: Map[String, String], addresses: Array[Map[String, String]]) {
 //  def this(login: String, password: String, token: String, role: String) = this(login, password, token, role, "", Map.empty, Array.empty)
 }
 case class ParamsMap(params: Map[String, String])

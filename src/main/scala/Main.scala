@@ -21,6 +21,6 @@ object Main extends App with MainRoutes {
   Http().bindAndHandle(routes, "localhost", 8081)
 
   println(s"Server online at http://localhost:8081")
-//
+
   Await.result(system.whenTerminated, Duration.Inf)
 }

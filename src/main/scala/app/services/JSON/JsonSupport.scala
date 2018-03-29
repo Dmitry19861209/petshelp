@@ -9,7 +9,7 @@ trait JsonSupport extends SprayJsonSupport {
 
   implicit val paramsMapFormat = jsonFormat1(ParamsMap)
   implicit val loginUserFormat = jsonFormat3(LoginUser)
-  implicit val userFormat = jsonFormat7(User)
+  implicit val userFormat = jsonFormat8(User)
 
   def serrFormat(source: String): LoginUser = {
     source.parseJson.convertTo[LoginUser]
